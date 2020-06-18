@@ -9,6 +9,8 @@ npm install
 * Generate and save private key:
 ```bash
 $ node -p "require('btcpay').crypto.generate_keypair()"
+In a linux terminal this should be the command
+$ node -p "require('btcpay').crypto.generate_keypair().getPrivate('hex')"
 
 >>> <Key priv: XXXXXXX pub: null >
 ```
