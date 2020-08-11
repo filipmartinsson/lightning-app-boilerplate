@@ -33,4 +33,13 @@ $ [space] BTCPAY_URL=https://mydomain.com/ BTCPAY_KEY=... BTCPAY_PAIRCODE=... no
 >>> { merchant: 'XXXXXX' }
 ```
 
+```powershell
+# In Windows Powershell, execute these commands one by one:
+
+$env:BTCPAY_URL='https://mydomain.com/'
+$env:BTCPAY_KEY='KEY'
+$env:BTCPAY_PAIRCODE='PAIRCODE'
+node -e "const btcpay=require('btcpay'); new btcpay.BTCPayClient(process.env.BTCPAY_URL, btcpay.crypto.load_keypair(Buffer.from(process.env.BTCPAY_KEY, 'hex'))).pair_client(process.env.BTCPAY_PAIRCODE).then(console.log).catch(console.error)"
+```
+
 Store the value of "merchant" in a save place, e.g. environment variables
